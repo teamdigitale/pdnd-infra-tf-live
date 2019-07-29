@@ -1,49 +1,65 @@
-# {MY_REPO} for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
+# Terraform infrastructure live for Piattaforma Digitale Nazionale Dati (PDND), previously DAF
 
-> Insert here the application logo and badges if present.
-
-> Insert here warnings if necessary (ie. if this is a not stable version).
-
-> Insert here a brief description of what your repository contains. Insert also links to the last release, the official page, the extended documentation, and other useful external resources.
+The repository contains the Terragrunt (Terraform related) live scripts used to provision and maintain the PDND infrastructure.
 
 ## What is the PDND (previously DAF)?
 
-PDND stays for "Piattaforma Digitale Nazionale Dati" (the Italian Digital Data Platform), previously known as Data & Analytics Framework (DAF).
+More informations about the DAF can be found on the [Digital Transformation Team website](https://teamdigitale.governo.it/it/projects/daf.htm)
 
-You can find more informations about the PDND on the official [Digital Transformation Team website](https://teamdigitale.governo.it/it/projects/daf.htm).
+## Tools references
 
-## What is {MY_REPO}?
+The tools used in this repository are
 
-> Insert here an extended description of the project with informations about context, goals, stakeholders, use cases, and finally the role of the project within the PDND with links to other repositories requiring this code or this code depends on. Embed also screenshots or video if present to give a preview of the application.
+* [Terragrunt](https://github.com/gruntwork-io/terragrunt)
+* [Terraform](https://www.terraform.io/)
 
-> Insert here informations about files and folders structure, branch model adopted and release policy.
+## Environments and branching structure
 
-### Tools references *(optional)*
+Code is versioned, depending on the environment it will run into. Branches represent different deployment environments. You may find in this repository a [dev](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/dev), a [staging](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/staging) and a [prod](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/prod) branch.
 
-This project references the following tools.
+## Repository directories and files structure
 
-* [Tool 1](https://link-to-tool-1.com/)
-* [Tool 2](https://link-to-tool-2.com/)
+```
+Deployment area
+    |_ Module
+```
 
-### Project components *(optional)*
+The root folder contains one or more *deployment areas*, for example *westeurope*.
 
-This project depends by the following components.
+Each deployment area contains one or more live scripts that have a one to one correspondence with a Terraform module. The Terraform modules are maintained in a [separate repository](https://github.com/teamdigitale/pdnd-infra-tf-modules).
 
-* **Component 1** version X.Y.Z, available [here](https://link-to-your-external-component).
+Module variables and main Terragrunt configuration files are stored in *terraform.tfvars* files.
+Modules can also optionally inherit shared variables from higher level folders. These variables may be stored at each level of the hierarchy in the *vars.tfvars* files. For example, the *westeurope* folder under each environment contains the variable `location = "westeurope"`, that is inherited by all the underlying modules.
 
-* **Component 2** version X.Y.Z, available [here](https://link-to-your-external-component).
+## How to use the scripts
 
-## How to install and use {MY_REPO} *(optional)*
+To provision an entire environment go into an environment folder and run
 
-> Insert here a brief documentation to use this project as an end-user (not a developer) if applicable, including pre-requisites and internal and external dependencies. Insert a link to an extended documentation (user manual) if present.
+```shell
+terragrunt apply-all
+```
 
-## How to build and test {MY_REPO}
+>Note: Substitute apply-all with destroy-all to destroy an entire environment
 
-> Insert here a brief documentation for the developer to build, test and contribute. Insert a link to an extended documentation (developer manual) if present.
+To provision a single module, go into the specific folder and run the same commands.
+
+If you have not committed your modules yet, and you'd like to test the scripts using local modules run:
+
+```shell
+terragrunt apply-all --terragrunt-source YOUR_PATH_TO_THE_LOCAL_MODULES_DIR
+```
+
+## How to clear the local cache
+
+Sometimes you may need to remove the local Terragrunt cache. To do so run
+
+```shell
+find . -type d -name ".terragrunt-cache" -prune -exec rm -rf {} \;
+```
 
 ## How to contribute
 
-Contributions are welcome. Feel free to [open issues](../../issues) and submit a [pull request](../../pulls) at any time, but please read [our handbook](https://github.com/teamdigitale/daf-handbook) first.
+Contributions are welcome. Feel free to [open issues](./issues) and submit a [pull request](./pulls) at any time, but please read [our handbook](https://github.com/teamdigitale/pdnd-handbook) first.
 
 ## License
 
