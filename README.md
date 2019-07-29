@@ -15,7 +15,7 @@ The tools used in this repository are
 
 ## Environments and branching structure
 
-Code is versioned, depending on the environment it will run into. Branches represent different deployment environments. You may find in this repository a [dev](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/development), a staging and a [prod](https://github.com/teamdigitale/pdnd-infra-tf-live) branch.
+Code is versioned, depending on the environment it will run into. Branches represent different deployment environments. You may find in this repository a [dev](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/dev), a [staging](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/staging) and a [prod](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/prod) branch.
 
 ## Repository directories and files structure
 
