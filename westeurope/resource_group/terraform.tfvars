@@ -1,6 +1,6 @@
 terragrunt = {
   terraform {
-    source = "git::git@github.com:teamdigitale/daf-infra-tf-modules.git//azurerm_rg"
+    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_rg"
   }
 
   # Include all settings from the root terraform.tfvars file
