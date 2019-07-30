@@ -17,4 +17,4 @@ terragrunt = {
 
 # Databricks workspace module related variables
 databricks_workspace_name_suffix = "01"
-azurerm_databricks_workspace_sku  = "standard"
+azurerm_databricks_workspace_sku = "standard"
