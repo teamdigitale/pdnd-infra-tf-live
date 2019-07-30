@@ -1,3 +1,11 @@
+#  Local .terraform directories
+**/.terraform/*
+**/.terragrunt-cache/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
 # OS X
 .history
 .DS_Store
@@ -11,3 +19,5 @@
 build/
 */build/
 out/
+
+.env
