@@ -7,7 +7,7 @@ terragrunt = {
       resource_group_name  = "${get_env("RG_INFRA_NAME", "daf-infra")}"
       storage_account_name = "${get_env("TERRAFORM_STORAGE_ACCOUNT_NAME", "pdndtf")}"
       container_name       = "${get_env("TERRAFORM_CONTAINER_NAME", "pdnd-tf")}"
-      key = "dev/${path_relative_to_include()}/terraform.tfstate"
+      key                  = "pdnd.italia.it/${path_relative_to_include()}/terraform.tfstate"
     }
   }
 
