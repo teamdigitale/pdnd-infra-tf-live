@@ -16,9 +16,10 @@ terragrunt = {
 }
 
 # Databricks workspace module related variables
-azuread_application_name                        = "data-portal"
-azuread_application_homepage                    = ""
-azuread_application_identifier_uris             = ""
+dns_domain_name_suffix                          = "pdnd.italia.it"
+azuread_application_name_suffix                 = "data-portal"
+azuread_application_homepage                    = "https://"
+azuread_application_identifier_uris             = ["http://localhost:3000/callback"]
 azuread_application_reply_urls                  = ["http://localhost:3000/callback"]
 azuread_application_available_to_other_tenants  = false
 azuread_application_oauth2_allow_implicit_flow  = true
