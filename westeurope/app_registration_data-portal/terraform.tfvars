@@ -15,7 +15,7 @@ terragrunt = {
   }
 }
 
-# Databricks workspace module related variables
+# app resgistration module related variables
 dns_domain_name_suffix                          = "pdnd.italia.it"
 azuread_application_name_suffix                 = "data-portal"
 azuread_application_homepage                    = "https://"
