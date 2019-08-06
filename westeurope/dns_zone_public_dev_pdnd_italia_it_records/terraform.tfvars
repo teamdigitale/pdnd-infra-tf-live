@@ -25,7 +25,8 @@ kubernetes_resource_group_name = "MC_pdnd-dev-rg_pdnd-dev-aks-k8s-01_westeurope"
 aks_cluster_name               = "k8s-01"
 kubernetes_cname_records       = [
   "data-portal",
-  "ontopia-virtuoso"
+  "ontopia-virtuoso",
+  "ontopia-lode"
 ]
 
 # Kubernetes specific variables end
