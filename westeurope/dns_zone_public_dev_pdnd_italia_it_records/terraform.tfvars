@@ -26,7 +26,8 @@ aks_cluster_name               = "k8s-01"
 kubernetes_cname_records       = [
   "data-portal",
   "ontopia-virtuoso",
-  "ontopia-lode"
+  "ontopia-lode",
+  "ontopia-lodview"
 ]
 
 # Kubernetes specific variables end
