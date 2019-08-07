@@ -27,7 +27,8 @@ kubernetes_cname_records       = [
   "data-portal",
   "ontopia-virtuoso",
   "ontopia-lode",
-  "ontopia-lodview"
+  "ontopia-lodview",
+  "superset"
 ]
 
 # Kubernetes specific variables end
