@@ -31,7 +31,8 @@ kubernetes_cname_records       = [
   "superset",
   "ckan",
   "semantic-katalod",
-  "semantic-triplifier"
+  "semantic-triplifier",
+  "ontonethub"
 ]
 
 # Kubernetes specific variables end
