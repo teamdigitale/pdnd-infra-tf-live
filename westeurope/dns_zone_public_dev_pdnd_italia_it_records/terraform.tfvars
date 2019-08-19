@@ -30,7 +30,8 @@ kubernetes_cname_records       = [
   "ontopia-lodview",
   "superset",
   "ckan",
-  "semantic-katalod"
+  "semantic-katalod",
+  "semantic-triplifier"
 ]
 
 # Kubernetes specific variables end
