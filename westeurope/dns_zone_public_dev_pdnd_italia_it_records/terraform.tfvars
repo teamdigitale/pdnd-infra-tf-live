@@ -32,7 +32,8 @@ kubernetes_cname_records       = [
   "ckan",
   "semantic-katalod",
   "semantic-triplifier",
-  "ontonethub"
+  "ontonethub",
+  "dashboard-metabase"
 ]
 
 # Kubernetes specific variables end
