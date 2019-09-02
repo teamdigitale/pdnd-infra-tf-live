@@ -12,7 +12,7 @@ terragrunt = {
   }
 
   terraform {
-    source = "git::git@github.com:teamdigitale/pdnd-infras-tf-modules.git//azurerm_aks_cluster"
+    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_aks_cluster"
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -27,7 +27,7 @@ aks_cluster_name                                              = "k8s-01"
 azurerm_kubernetes_cluster_linux_profile_admin_username       = "teamdigitale"
 azurerm_key_vault_secret_ssh_public_key_name                  = "terraformsshkeypub"
 azurerm_kubernetes_cluster_agent_pool_profile_count           = 3
-azurerm_kubernetes_cluster_agent_pool_profile_vm_size         = "Standard_DS2_v2"
+azurerm_kubernetes_cluster_agent_pool_profile_vm_size         = "Standard_B8ms"
 azurerm_kubernetes_cluster_agent_pool_profile_max_pods        = 100
 azurerm_kubernetes_cluster_network_profile_pod_cidr           = "10.1.0.0/16"
 azurerm_kubernetes_cluster_network_profile_service_cidr       = "10.2.0.0/16"
