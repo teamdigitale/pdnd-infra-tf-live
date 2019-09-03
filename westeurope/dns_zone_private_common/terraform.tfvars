@@ -17,8 +17,8 @@ terragrunt = {
 }
 
 # Azure DNS zone module variables
-dns_zone_prefix            = "k8s-01"
+dns_zone_prefix            = "common"
 dns_zone_suffix            = "pdnd.internal"
 azurerm_dns_zone_zone_type = "Private"
-registration_vnets         = ["k8s-01"]
+registration_vnets         = ["common"]
 resolution_vnets           = []
