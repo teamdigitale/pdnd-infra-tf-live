@@ -16,7 +16,7 @@ terragrunt = {
 }
 
 # Azure subnet module variables
-vnet_name                     = "k8s-01"
+vnet_name                     = "common"
 subnet_name                   = "k8s-01"
 azurerm_subnet_address_prefix = "10.0.0.0/16"
 add_security_group             = false
