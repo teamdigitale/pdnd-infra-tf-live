@@ -6,7 +6,7 @@ terragrunt = {
   }
 
   terraform {
-    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_service_principal_secret"
+    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_service_principal"
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -16,6 +16,6 @@ terragrunt = {
 }
 
 # Service Principal module variables
-app_name                                     = "superset"
+app_name                                     = "data-portal"
 azurerm_role_assignment_role_definition_name = "Contributor"
-azurerm_key_vault_secret_name                = "supersetspsecret"
+azurerm_key_vault_secret_name                = "dataportalspsecret"
