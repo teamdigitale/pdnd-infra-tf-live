@@ -4,7 +4,8 @@
 terragrunt = {
   dependencies {
     paths = [
-      "../resource_group"
+      "../resource_group",
+      "../kubernetes_cluster_k8s-01"
     ]
   }
 
