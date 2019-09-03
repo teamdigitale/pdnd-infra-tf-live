@@ -16,5 +16,5 @@ terragrunt = {
 }
 
 # Azure vnet module variables
-vnet_name                             = "k8s-01"
-azurerm_virtual_network_address_space = "10.0.0.0/10"
+vnet_name                             = "common"
+azurerm_virtual_network_address_space = "10.0.0.0/8"
