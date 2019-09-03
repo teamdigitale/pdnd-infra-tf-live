@@ -1,6 +1,12 @@
 terragrunt = {
+  dependencies {
+    paths = [
+      "../resource_group"
+    ]
+  }
+
   terraform {
-    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_data_factory"
+    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_datafactory"
   }
 
   # Include all settings from the root terraform.tfvars file
