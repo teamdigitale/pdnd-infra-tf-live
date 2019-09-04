@@ -21,7 +21,7 @@ azurerm_storage_account_account_kind             = "StorageV2"
 azurerm_storage_account_account_tier             = "Standard"
 azurerm_storage_account_account_replication_type = "LRS"
 azurerm_storage_account_is_hns_enabled           = true
-allowed_ips                                      = ["5.97.129.253"]
+allowed_ips                                      = ["5.97.129.253", "195.66.9.172"]
 
 # TODO: Add option to create filesystem for Azure Data Lake Gen2
 # See https://github.com/terraform-providers/terraform-provider-azurerm/issues/3319
