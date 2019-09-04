@@ -5,7 +5,7 @@ terragrunt = {
   dependencies {
     paths = [
       "../subnet_k8s-01",
-      "../dns_zone_private_k8s-01",
+      "../dns_zone_private_common",
       "../service_principal_k8s-01",
       "../log_analytics_workspace"
     ]
