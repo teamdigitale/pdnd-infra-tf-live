@@ -18,5 +18,6 @@ kubernetes_cname_records = [
   "semantic-triplifier",
   "data-portal",
   "ckan",
-  "superset"
+  "superset",
+  "dashboard"
 ]
