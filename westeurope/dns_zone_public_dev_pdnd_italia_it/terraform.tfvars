@@ -1,4 +1,10 @@
 terragrunt = {
+  dependencies {
+    paths = [
+      "../resource_group"
+    ]
+  }
+
   terraform {
     source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_dns_zone"
   }
