@@ -13,7 +13,7 @@ kubernetes_cname_records = [
   "ontopia-lodview",
   "ontopia-lode",
   "ontopia-virtuoso",
-  "ontonehub",
+  "ontonethub",
   "semantic-katalod",
   "semantic-triplifier",
   "data-portal",
