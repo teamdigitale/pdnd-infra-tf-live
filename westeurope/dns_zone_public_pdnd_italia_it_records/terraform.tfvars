@@ -8,3 +8,15 @@ terragrunt = {
     path = "${find_in_parent_folders()}"
   }
 }
+
+kubernetes_cname_records = [
+  "ontopia-lodview",
+  "ontopia-lode",
+  "ontopia-virtuoso",
+  "ontonehub",
+  "semantic-katalod",
+  "semantic-triplifier",
+  "data-portal",
+  "ckan",
+  "superset"
+]
