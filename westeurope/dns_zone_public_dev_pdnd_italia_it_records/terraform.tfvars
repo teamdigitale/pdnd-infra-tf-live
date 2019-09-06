@@ -17,13 +17,13 @@ terragrunt = {
 }
 
 # Azure DNS zone records module variables
-dns_zone_suffix                = "dev.pdnd.italia.it"
+dns_zone_suffix                     = "dev.pdnd.italia.it"
 
 # Kubernetes specific variables start
-kubernetes_public_ip_name      = "k8s-01"
-kubernetes_resource_group_name = "MC_pdnd-dev-rg_pdnd-dev-aks-k8s-01_westeurope"
-aks_cluster_name               = "k8s-01"
-kubernetes_cname_records       = [
+kubernetes_public_ip_name           = "k8s-01"
+kubernetes_resource_group_name      = "MC_pdnd-dev-rg_pdnd-dev-aks-k8s-01_westeurope"
+aks_cluster_name                    = "k8s-01"
+kubernetes_cname_records            = [
   "data-portal",
   "ontopia-virtuoso",
   "ontopia-lode",
@@ -32,7 +32,8 @@ kubernetes_cname_records       = [
   "ckan",
   "semantic-katalod",
   "semantic-triplifier",
-  "ontonethub"
+  "ontonethub",
+  "www"
 ]
 
 # Kubernetes specific variables end
