@@ -1,7 +1,8 @@
 terragrunt = {
   dependencies {
     paths = [
-      "../key_vault"
+      "../key_vault",
+      "../app_registration_k8s-01"
     ]
   }
 
