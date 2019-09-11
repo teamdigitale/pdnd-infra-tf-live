@@ -19,5 +19,6 @@ kubernetes_cname_records = [
   "data-portal",
   "ckan",
   "superset",
-  "dashboard"
+  "dashboard",
+  "www"
 ]
