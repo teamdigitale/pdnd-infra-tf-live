@@ -1,12 +1,13 @@
 terragrunt = {
   dependencies {
     paths = [
-      "../key_vault"
+      # "../service_principal_ingestion_sftp",
+      "../storage_account_ingestion_sftp_share"
     ]
   }
 
   terraform {
-    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_container_group"
+    source = "git::git@github.com:teamdigitale/pdnd-infra-tf-modules.git//azurerm_container_group_ingestion_sftp"
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -16,14 +17,18 @@ terragrunt = {
 }
 
 # Service Principal module variables
+vnet_name                                         = "k8s-01"
+subnet_name                                       = "ingestion-sftp-01"
 azurerm_container_group_name_suffix               = "ingestionsftp"
-azurerm_container_group_ip_address_type           = "public"
-azurerm_container_group_container_image           = "atmoz/sftp:latest"
-azurerm_container_group_container_cpu             = "0.5"
-azurerm_container_group_container_memory          = "1.5"
+azurerm_container_group_ip_address_type           = "private"
+azurerm_container_group_container_image           = "atmoz/sftp:debian-jessie"
+azurerm_container_group_container_cpu             = "1"
+azurerm_container_group_container_memory          = "2"
 azurerm_container_group_container_port            = 22
 azurerm_container_group_container_sftp_user       = "teamdigitale"
-azurerm_container_group_container_sftp_env_users  = "[teamdigitale:teamdigitale:1001]"
-azurerm_storage_account_name                      = "ingestionsftp"
+azurerm_container_group_container_sftp_env_users  = "teamdigitale:teamdigitale:1001"
+storage_account_name                              = "ingestionsftp"
 azurerm_storage_share_name                        = "ingestionsftp"
-
+azurerm_azuread_service_principal_name            = "ingestionsftp"
+storage_account_share_name_suffix                 = "ingestionsftp"
+log_analytics_workspace_name                      = "01"
