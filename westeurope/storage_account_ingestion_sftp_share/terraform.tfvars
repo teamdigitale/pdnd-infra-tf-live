@@ -1,7 +1,8 @@
 terragrunt = {
   dependencies {
     paths = [
-      "../resource_group"
+      "../resource_group",
+      "../storage_account_ingestion_sftp"
     ]
   }
 
