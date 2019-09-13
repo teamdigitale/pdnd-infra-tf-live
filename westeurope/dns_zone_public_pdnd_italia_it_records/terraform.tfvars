@@ -9,6 +9,11 @@ terragrunt = {
   }
 }
 
+kubernetes_public_ip_name      = "k8s-01"
+kubernetes_resource_group_name = "MC_pdnd-prod-rg_pdnd-prod-aks-k8s-01_westeurope"
+kubernetes_environment         = "prod"
+aks_cluster_name               = "k8s-01"
+
 kubernetes_cname_records = [
   "ontopia-lodview",
   "ontopia-lode",
