@@ -6,25 +6,17 @@ The repository contains the Terragrunt (Terraform related) live scripts used to 
 
 More informations about the DAF can be found on the [Digital Transformation Team website](https://teamdigitale.governo.it/it/projects/daf.htm)
 
-## Tools references
-
-The tools used in this repository are
-
-* [Terragrunt](https://github.com/gruntwork-io/terragrunt)
-* [Terraform](https://www.terraform.io/)
-
-## Environments and branching structure
-
-Code is versioned, depending on the environment it will run into. Branches represent different deployment environments. You may find in this repository a [dev](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/dev), a [staging](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/staging) and a [prod](https://github.com/teamdigitale/pdnd-infra-tf-live/tree/prod) branch.
-
 ## Repository directories and files structure
 
 ```
-Deployment area
-    |_ Module
+Environment
+    |_Deployment area
+        |_ Module
 ```
 
-The root folder contains one or more *deployment areas*, for example *westeurope*.
+The root folder contains one or more *environments*, for example *dev*, *staging*, *prod*
+
+Each *environment* contains one or more *deployment areas*, for example *westeurope*.
 
 Each deployment area contains one or more live scripts that have a one to one correspondence with a Terraform module. The Terraform modules are maintained in a [separate repository](https://github.com/teamdigitale/pdnd-infra-tf-modules).
 
@@ -33,20 +25,52 @@ Modules can also optionally inherit shared variables from higher level folders. 
 
 ## How to use the scripts
 
-To provision an entire environment go into an environment folder and run
+The sections describes how to provision the PDND infrastructure using the Terraform scripts in this repository.
+
+Before using Terraform, 
+
+* Be sure to be owner of the Azure subscription
+
+* Be sure to be global administrator of the Azure AD tenant
+
+* Copy the *.env.example* to *.env* and fill the *.env* file in with your details.
+
+The very first time, only once, init the Azure environment to support Terraform:
+
+```shell
+cd utils
+source az-init.sh
+```
+
+Each time, before using Terraform run
+
+```shell
+cd utils
+source az-export.sh
+```
+
+To provision an entire infrastructure, run from the root folder
 
 ```shell
 terragrunt apply-all
 ```
 
->Note: Substitute apply-all with destroy-all to destroy an entire environment
+>NOTE: Substitute apply-all with destroy-all to destroy an entire environment
 
-To provision a single module, go into the specific folder and run the same commands.
-
-If you have not committed your modules yet, and you'd like to test the scripts using local modules run:
+To apply a single live module, go in a live module folder and run
 
 ```shell
-terragrunt apply-all --terragrunt-source YOUR_PATH_TO_THE_LOCAL_MODULES_DIR
+terragrunt apply
+```
+
+To provision a single module, go into the specific folder and run the same command.
+
+## Local tests
+
+If you have not committed a Terraform module yet and you'd like to test it run from the live module folder:
+
+```shell
+terragrunt apply --terragrunt-source PATH_TO_YOUR_LOCAL_MODULE_DIR
 ```
 
 ## How to clear the local cache
