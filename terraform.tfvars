@@ -7,7 +7,7 @@ terragrunt = {
       resource_group_name  = "${get_env("RG_INFRA_NAME", "daf-infra")}"
       storage_account_name = "${get_env("TERRAFORM_STORAGE_ACCOUNT_NAME", "pdndtf")}"
       container_name       = "${get_env("TERRAFORM_CONTAINER_NAME", "pdnd-tf")}"
-      key = "dev/${path_relative_to_include()}/terraform.tfstate"
+      key                  = "${path_relative_to_include()}/terraform.tfstate"
     }
   }
 
@@ -18,7 +18,8 @@ terragrunt = {
 
       optional_var_files = [
         "${get_parent_tfvars_dir()}/vars.tfvars",
-        "${get_tfvars_dir()}/${find_in_parent_folders("vars.tfvars", "ignore")}"
+        "${get_tfvars_dir()}/${find_in_parent_folders("vars.tfvars", "ignore")}",
+        "${get_tfvars_dir()}/../${find_in_parent_folders("vars.tfvars", "ignore")}"
       ]
     }
   }
